@@ -13,6 +13,10 @@ OUTPUT_DIR = './output'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def main():
+    """
+    Função principal que verifica a existência de imagens no diretório de entrada,
+    processa cada imagem encontrada e salva os resultados no diretório de saída.
+    """
     ext = ('.jpg', '.jpeg', '.png', '.bmp')
     imagens = []
 
@@ -28,7 +32,7 @@ def main():
     print(f"[INFO] Encontradas {len(imagens)} imagens.")
     for img_path in sorted(imagens):
         print(f"[INFO] Processando {os.path.basename(img_path)}...")
-        process_images(img_path)
+        process_images(img_path, OUTPUT_DIR)
 
 if __name__ == "__main__":
     main()

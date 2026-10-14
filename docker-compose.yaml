@@ -1,14 +1,6 @@
-version: '3.8'
-
 services:
-  retificador:
+  opencv_retificador:
     build: .
-    container_name: opencv_retificador
-    environment:
-      - DISPLAY=${DISPLAY}
-    network_mode: host
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./main.py:/app/main.py:ro
+      - ./output:/app/output
       - ./dataset:/app/dataset
-      - ./output:/app/formated
